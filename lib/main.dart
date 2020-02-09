@@ -16,23 +16,6 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.red,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Row(
-            children: <Widget>[
-              Container(
-                width: 10,
-              ),
-              Text(
-                "Menu",
-              ),
-            ],
-          ),
-        ),
-        drawer: Drawer(
-          child: ListView(
-            children: <Widget>[],
-          ),
-        ),
         body: PrakashDashboard(),
       ),
     );
@@ -84,25 +67,11 @@ class PrakashDashboard extends StatelessWidget {
             "${getWeekday(today.weekday)}  ,  ${today.day}  ${getMonth(today.month)}",
             style: TextStyle(color: Colors.white, fontSize: 18),
           ),
-          Container(height: 200,),
-          Footer()
+          Container(
+            height: 200,
+          ),
         ],
       ),
-    );
-  }
-}
-
-class Footer extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 20, right: 10),
-          child: Text("@Copyright"),
-        ),
-      ],
     );
   }
 }
